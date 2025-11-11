@@ -1,0 +1,54 @@
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/banner-programas.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+.programa-img {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+.badge-duration {
+    font-size: 0.8rem;
+}
+.modal-img {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+/* Override de color primario Bootstrap */
+.bg-primary {
+    background-color: #dc3545 !important;
+}
+.btn-primary {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-primary:hover {
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+.btn-outline-primary {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-outline-primary:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.text-primary {
+    color: #dc3545 !important;
+}
+.table-primary {
+    background-color: rgba(220, 53, 69, 0.1) !important;
+}
+.border-primary {
+    border-color: #dc3545 !important;
+}
+/* Clase personalizada SOLO para el navbar */
+.bg-custom-navbar {
+    background-color: #6c757d !important; /* Gris Bootstrap */
+}

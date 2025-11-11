@@ -8,6 +8,7 @@
     <!-- En lugar de CDN = Content Delivery Network (Red de distribución de contenidos), se está utilizando el Bootstrap descargado. -->
     <!-- Bootstrap CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/servicios.css">
     <!-- Bootstrap JS -->
     <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
     <!-- Es mejor colocar los scripts en el <head> con defer, porque permite descargar el JavaScript en paralelo al análisis del HTML y ejecutarlo una vez que todo el DOM esté listo, sin bloquear el renderizado. -->
@@ -18,67 +19,8 @@
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Bootstrap JS -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script> -->
-
-    <style>
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/banner-servicios.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            display: flex;
-            align-items: center;
-        }
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .service-card {
-            transition: transform 0.3s ease;
-            height: 100%;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        .testimonial-img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-        }
-        /* Override de color primario Bootstrap */
-        .bg-primary {
-            background-color: #dc3545 !important;
-        }
-        .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-        .btn-primary:hover {
-            background-color: #bb2d3b;
-            border-color: #b02a37;
-        }
-        .btn-outline-primary {
-            color: #dc3545;
-            border-color: #dc3545;
-        }
-        .btn-outline-primary:hover {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-        .text-primary {
-            color: #dc3545 !important;
-        }
-        .table-primary {
-            background-color: rgba(220, 53, 69, 0.1) !important;
-        }
-        .border-primary {
-            border-color: #dc3545 !important;
-        }
-        /* Clase personalizada SOLO para el navbar */
-        .bg-custom-navbar {
-            background-color: #6c757d !important; /* Gris Bootstrap */
-        }
-    </style>
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom-navbar sticky-top shadow">
@@ -472,7 +414,7 @@
                         <a href="https://www.youtube.com/" target="_blank" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
                     </div>
                     <div class="bg-secondary p-3 rounded">
-                        <p class="mb-1"><strong>Pareja Coloma, Grover Adré</strong></p>
+                        <p class="mb-1"><strong>Alumno: Pareja Coloma, Grover André</strong></p>
                         <p class="mb-0">Curso: Diseño y Desarrollo Web con Bootstrap</p>
                     </div>
                 </div>
