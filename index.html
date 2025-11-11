@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Superior SISE - Lima, Perú</title>
+
+    <!-- En lugar de CDN = Content Delivery Network (Red de distribución de contenidos), se está utilizando el Bootstrap descargado. -->
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Es mejor colocar los scripts en el <head> con defer, porque permite descargar el JavaScript en paralelo al análisis del HTML y ejecutarlo una vez que todo el DOM esté listo, sin bloquear el renderizado. -->
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Bootstrap JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script> -->
+
+    <style>
+        /* CSS embebido mínimo y específico */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/banner-principal.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+        .img-card-fit {
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+        }
+        /* Override de color primario Bootstrap */
+        /* Color primario rojo para toda la página EXCEPTO el navbar */
+        .bg-primary {
+            background-color: #dc3545 !important; /* Se usa !important en algunos casos para asegurar que nuestro estilo tenga prioridad sobre los estilos de Bootstrap */
+        }
+        .btn-primary {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-primary:hover {
+            background-color: #bb2d3b;
+            border-color: #b02a37;
+        }
+        .btn-outline-primary {
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-outline-primary:hover {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .text-primary {
+            color: #dc3545 !important;
+        }
+        .table-primary {
+            background-color: rgba(220, 53, 69, 0.1) !important;
+        }
+        .border-primary {
+            border-color: #dc3545 !important;
+        }
+        /* Clase personalizada SOLO para el navbar */
+        .bg-custom-navbar {
+            background-color: #6c757d !important; /* Gris Bootstrap */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow"> --> <!-- Con este cambio el navbar queda con el color primario rojo igual que el resto de la página -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top shadow"> --> <!-- Con este cambio el navbar queda gris y el resto de la página con el color primario rojo -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom-navbar sticky-top shadow"> <!-- Con este cambio el navbar queda gris y el resto de la página con el color primario rojo -->
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="img/logo-sise.png" alt="Logo SISE" height="40" class="d-inline-block align-text-top me-2">
+                Instituto SISE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programas.html">Programas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admision.html">Admisión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section / Banner Principal -->
+    <header class="hero-section text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Formación Profesional de Calidad en Lima</h1>
+                    <p class="lead mb-4">Más de 20 años formando profesionales técnicos exitosos con educación práctica y moderna.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="admision.html" class="btn btn-warning btn-lg px-4">Postula Ahora</a>
+                        <a href="programas.html" class="btn btn-outline-light btn-lg px-4">Ver Programas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Sección: Por qué elegir SISE -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">¿Por qué Elegir el Instituto SISE?</h2>
+                        <p class="lead">Descubre las ventajas de estudiar con nosotros</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-award-fill text-primary display-6 mb-3"></i>
+                                <h5 class="card-title fw-bold">Certificación Internacional</h5>
+                                <p class="card-text">Programas con certificación reconocida a nivel nacional e internacional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-briefcase-fill text-primary display-6 mb-3"></i>
+                                <h5 class="card-title fw-bold">Bolsa de Trabajo</h5>
+                                <p class="card-text">Convenios con más de 200 empresas para prácticas y empleo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-laptop-fill text-primary display-6 mb-3"></i>
+                                <h5 class="card-title fw-bold">Laboratorios Modernos</h5>
+                                <p class="card-text">Infraestructura tecnológica de última generación para tu formación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Programas Destacados -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">Programas Destacados</h2>
+                        <p class="lead">Conoce nuestras carreras técnicas más demandadas</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow border-0 rounded-3">
+                            <img src="img/programa-1.jpg" class="card-img-top img-card-fit" alt="Diseño y Desarrollo Web">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Diseño y Desarrollo Web</h5>
+                                <p class="card-text">Aprende a crear sitios web modernos y aplicaciones web con las últimas tecnologías.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">2 años</span>
+                                    <a href="programas.html" class="btn btn-sm btn-outline-primary">Más info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow border-0 rounded-3">
+                            <img src="img/programa-2.jpg" class="card-img-top img-card-fit" alt="Administración de Empresas">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Administración de Empresas</h5>
+                                <p class="card-text">Formación en gestión empresarial, marketing y recursos humanos.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">3 años</span>
+                                    <a href="programas.html" class="btn btn-sm btn-outline-primary">Más info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow border-0 rounded-3">
+                            <img src="img/programa-3.jpg" class="card-img-top img-card-fit" alt="Enfermería Técnica">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Enfermería Técnica</h5>
+                                <p class="card-text">Formación práctica en cuidado paciente y procedimientos médicos.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">3 años</span>
+                                    <a href="programas.html" class="btn btn-sm btn-outline-primary">Más info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="programas.html" class="btn btn-primary btn-lg">Ver Todos los Programas</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Galería de Imágenes (Carousel) -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">Nuestras Instalaciones</h2>
+                        <p class="lead">Conoce nuestro campus y modernas instalaciones</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="campusCarousel" class="carousel slide shadow rounded" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="2"></button>
+                            </div>
+                            <div class="carousel-inner rounded">
+                                <div class="carousel-item active">
+                                    <img src="img/campus-1.jpg" class="d-block w-100" alt="Biblioteca SISE" style="height: 400px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                                        <h5>Biblioteca Central</h5>
+                                        <p>Amplia colección de libros y espacios de estudio</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/campus-2.jpg" class="d-block w-100" alt="Laboratorios SISE" style="height: 400px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                                        <h5>Laboratorios de Computación</h5>
+                                        <p>Tecnología de última generación para prácticas</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/campus-3.jpg" class="d-block w-100" alt="Aulas SISE" style="height: 400px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                                        <h5>Aulas Modernas</h5>
+                                        <p>Ambientes equipados para el mejor aprendizaje</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#campusCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#campusCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Tabla de Próximos Inicios -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">Próximos Inicios de Clases</h2>
+                        <p class="lead">Planifica tu ingreso con nuestras fechas de inicio</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="table-responsive shadow rounded">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>Carrera</th>
+                                        <th>Duración</th>
+                                        <th>Turno</th>
+                                        <th>Inicio</th>
+                                        <th>Vacantes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Diseño y Desarrollo Web</td>
+                                        <td>2 años</td>
+                                        <td>Mañana/Tarde</td>
+                                        <td>15 Marzo 2025</td>
+                                        <td><span class="badge bg-success">15 disponibles</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Administración de Empresas</td>
+                                        <td>3 años</td>
+                                        <td>Mañana/Noche</td>
+                                        <td>10 Abril 2025</td>
+                                        <td><span class="badge bg-warning text-dark">8 disponibles</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enfermería Técnica</td>
+                                        <td>3 años</td>
+                                        <td>Tarde</td>
+                                        <td>5 Mayo 2025</td>
+                                        <td><span class="badge bg-danger">3 disponibles</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contabilidad</td>
+                                        <td>3 años</td>
+                                        <td>Noche</td>
+                                        <td>20 Marzo 2025</td>
+                                        <td><span class="badge bg-success">12 disponibles</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="admision.html" class="btn btn-primary">Consultar Más Fechas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Información de Contacto -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Contacto</h5>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i> Av. Arequipa 1234, Lima, Perú</p>
+                    <p><i class="bi bi-telephone-fill me-2"></i> (01) 123-4567</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i> info@sise.edu.pe</p>
+                    <p><i class="bi bi-clock-fill me-2"></i> Lun-Vie: 8:00 AM - 8:00 PM</p>
+                </div>
+                
+                <!-- Redes Sociales -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Síguenos en</h5>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="https://www.facebook.com/" target="_blank" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="text-white fs-4"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                    </div>
+                    <div class="bg-secondary p-3 rounded">
+                        <p class="mb-1"><strong>Flor del Campo, Alan Brito</strong></p>
+                        <p class="mb-0">Curso: Diseño y Desarrollo Web con Bootstrap</p>
+                    </div>
+                </div>
+                
+                <!-- Enlaces Rápidos -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="admision.html" class="text-white text-decoration-none">Proceso de Admisión</a></li>
+                        <li><a href="programas.html" class="text-white text-decoration-none">Nuestros Programas</a></li>
+                        <li><a href="servicios.html" class="text-white text-decoration-none">Servicios Estudiantiles</a></li>
+                        <li><a href="contacto.html" class="text-white text-decoration-none">Trabaja con Nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <!-- Copyright -->
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">Todos los Derechos Reservados - Copyright © 2025 Instituto Superior SISE</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Política de Privacidad</a>
+                    <a href="#" class="text-white text-decoration-none">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

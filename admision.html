@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso de Admisión - Instituto Superior SISE</title>
+
+    <!-- En lugar de CDN = Content Delivery Network (Red de distribución de contenidos), se está utilizando el Bootstrap descargado. -->
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/admision.js" defer></script>
+    <!-- Es mejor colocar los scripts en el <head> con defer, porque permite descargar el JavaScript en paralelo al análisis del HTML y ejecutarlo una vez que todo el DOM esté listo, sin bloquear el renderizado. -->
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Bootstrap JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script> -->
+
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/banner-admision.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+        }
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #dc3545;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        .form-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .requisito-item {
+            border-left: 3px solid #dc3545;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        /* Override de color primario Bootstrap */
+        .bg-primary {
+            background-color: #dc3545 !important;
+        }
+        .btn-primary {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-primary:hover {
+            background-color: #bb2d3b;
+            border-color: #b02a37;
+        }
+        .btn-outline-primary {
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-outline-primary:hover {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .text-primary {
+            color: #dc3545 !important;
+        }
+        .table-primary {
+            background-color: rgba(220, 53, 69, 0.1) !important;
+        }
+        .border-primary {
+            border-color: #dc3545 !important;
+        }
+        /* Clase personalizada SOLO para el navbar */
+        .bg-custom-navbar {
+            background-color: #6c757d !important; /* Gris Bootstrap */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom-navbar sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="img/logo-sise.png" alt="Logo SISE" height="40" class="d-inline-block align-text-top me-2">
+                Instituto SISE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programas.html">Programas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admision.html">Admisión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Proceso de Admisión 2025</h1>
+                    <p class="lead mb-4">Inicia tu camino hacia el éxito profesional con nosotros</p>
+                    <a href="#formulario-admision" class="btn btn-warning btn-lg px-4">Postular Ahora</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Sección: Pasos del Proceso -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">Proceso de Admisión en 4 Pasos</h2>
+                        <p class="lead">Sigue estos simples pasos para formar parte de nuestra familia SISE</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <!-- Paso 1 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="text-center">
+                            <div class="step-icon">1</div>
+                            <h5 class="fw-bold">Solicitud de Información</h5>
+                            <p>Completa el formulario de admisión con tus datos personales y el programa de interés.</p>
+                        </div>
+                    </div>
+                    <!-- Paso 2 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="text-center">
+                            <div class="step-icon">2</div>
+                            <h5 class="fw-bold">Evaluación Diagnóstica</h5>
+                            <p>Presenta nuestra evaluación diagnóstica en línea sin costo adicional.</p>
+                        </div>
+                    </div>
+                    <!-- Paso 3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="text-center">
+                            <div class="step-icon">3</div>
+                            <h5 class="fw-bold">Entrevista Personal</h5>
+                            <p>Agenda una entrevista con nuestro equipo de admisiones.</p>
+                        </div>
+                    </div>
+                    <!-- Paso 4 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="text-center">
+                            <div class="step-icon">4</div>
+                            <h5 class="fw-bold">Matrícula</h5>
+                            <p>Completa tu matrícula y recibe la bienvenida oficial a SISE.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Requisitos -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card shadow rounded-3">
+                            <div class="card-header bg-primary text-white">
+                                <h4 class="mb-0 fw-bold"><i class="bi bi-list-check me-2"></i>Requisitos de Admisión</h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="requisito-item">
+                                    <h6 class="fw-bold text-primary">Documentos Obligatorios</h6>
+                                    <ul class="mb-0">
+                                        <li>Certificado de estudios secundarios original (o constancia de trámite)</li>
+                                        <li>DNI original y 2 copias</li>
+                                        <li>4 fotografías tamaño carnet (fondo blanco)</li>
+                                        <li>Recibo de servicios (luz/agua) para verificar domicilio</li>
+                                    </ul>
+                                </div>
+                                <div class="requisito-item">
+                                    <h6 class="fw-bold text-primary">Requisitos Académicos</h6>
+                                    <ul class="mb-0">
+                                        <li>Haber concluido la educación secundaria</li>
+                                        <li>Mínimo 11 de promedio en los tres últimos años de secundaria</li>
+                                        <li>No tener impedimento legal para estudiar</li>
+                                    </ul>
+                                </div>
+                                <div class="requisito-item">
+                                    <h6 class="fw-bold text-primary">Proceso Adicional para Extranjeros</h6>
+                                    <ul class="mb-0">
+                                        <li>Carné de extranjería o pasaporte vigente</li>
+                                        <li>Convalidación de estudios en el Ministerio de Educación</li>
+                                        <li>Certificado de migraciones con residencia regular</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Fechas Importantes -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">Fechas Importantes 2025</h2>
+                        <p class="lead">Planifica tu ingreso con nuestro calendario académico</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="table-responsive shadow rounded">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>Proceso</th>
+                                        <th>Fecha Inicio</th>
+                                        <th>Fecha Fin</th>
+                                        <th>Estado</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Admisión Ciclo Marzo 2025</strong></td>
+                                        <td>15 Ene 2025</td>
+                                        <td>10 Mar 2025</td>
+                                        <td><span class="badge bg-success">Abierto</span></td>
+                                        <td><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdmision">Postular</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Admisión Ciclo Julio 2025</strong></td>
+                                        <td>15 May 2025</td>
+                                        <td>05 Jul 2025</td>
+                                        <td><span class="badge bg-warning text-dark">Próximo</span></td>
+                                        <td><button class="btn btn-sm btn-outline-primary" disabled>Próximamente</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Admisión Ciclo Octubre 2025</strong></td>
+                                        <td>15 Ago 2025</td>
+                                        <td>05 Oct 2025</td>
+                                        <td><span class="badge bg-secondary">Programado</span></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary" disabled>Programado</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Exámenes de Admisión Extraordinarios</strong></td>
+                                        <td>Cada 15 días</td>
+                                        <td>-</td>
+                                        <td><span class="badge bg-info">Continuo</span></td>
+                                        <td><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdmision">Postular</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Formulario de Admisión -->
+        <section id="formulario-admision" class="py-5 form-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow rounded-3 border-0">
+                            <div class="card-header bg-primary text-white py-3">
+                                <h4 class="mb-0 fw-bold text-center"><i class="bi bi-person-plus-fill me-2"></i>Formulario de Admisión</h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <form id="admisionForm" novalidate>
+                                    <!-- Información Personal -->
+                                    <fieldset class="mb-4">
+                                        <legend class="fw-bold text-primary h5 mb-3">
+                                            <i class="bi bi-person-circle me-2"></i>Información Personal
+                                        </legend>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="nombres" class="form-label fw-semibold">Nombres Completos *</label>
+                                                <input type="text" class="form-control" id="nombres" required>
+                                                <div class="invalid-feedback">
+                                                    Por favor ingresa tus nombres completos.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="apellidos" class="form-label fw-semibold">Apellidos Completos *</label>
+                                                <input type="text" class="form-control" id="apellidos" required>
+                                                <div class="invalid-feedback">
+                                                    Por favor ingresa tus apellidos completos.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="dni" class="form-label fw-semibold">DNI *</label>
+                                                <input type="text" class="form-control" id="dni" pattern="[0-9]{8}" required>
+                                                <div class="invalid-feedback">
+                                                    Por favor ingresa un DNI válido (8 dígitos).
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="fechaNacimiento" class="form-label fw-semibold">Fecha de Nacimiento *</label>
+                                                <input type="date" class="form-control" id="fechaNacimiento" required>
+                                                <div class="invalid-feedback">
+                                                    Por favor selecciona tu fecha de nacimiento.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="telefono" class="form-label fw-semibold">Teléfono/Celular *</label>
+                                                <input type="tel" class="form-control" id="telefono" required>
+                                                <div class="invalid-feedback">
+                                                    Por favor ingresa tu número de teléfono.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="email" class="form-label fw-semibold">Email *</label>
+                                                <input type="email" class="form-control" id="email" required>
+                                                <div class="invalid-feedback">
+                                                    Por favor ingresa un email válido.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <!-- Información Académica -->
+                                    <fieldset class="mb-4">
+                                        <legend class="fw-bold text-primary h5 mb-3">
+                                            <i class="bi bi-book me-2"></i>Información Académica
+                                        </legend>
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <label for="programa" class="form-label fw-semibold">Programa de Interés *</label>
+                                                <select class="form-select" id="programa" required>
+                                                    <option value="" selected disabled>Selecciona un programa</option>
+                                                    <option value="diseno-web">Diseño y Desarrollo Web</option>
+                                                    <option value="administracion">Administración de Empresas</option>
+                                                    <option value="enfermeria">Enfermería Técnica</option>
+                                                    <option value="diseno-grafico">Diseño Gráfico Digital</option>
+                                                    <option value="redes">Redes y Comunicaciones</option>
+                                                    <option value="contabilidad">Contabilidad</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Por favor selecciona un programa de interés.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="colegio" class="form-label fw-semibold">Colegio de Procedencia *</label>
+                                                <input type="text" class="form-control" id="colegio" required>
+                                                <div class="invalid-feedback">
+                                                    Por favor ingresa tu colegio de procedencia.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="anioEgreso" class="form-label fw-semibold">Año de Egreso *</label>
+                                                <input type="number" class="form-control" id="anioEgreso" min="2010" max="2025" required>
+                                                <div class="invalid-feedback">
+                                                    Por favor ingresa el año de egreso.
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label fw-semibold">Turno de Preferencia *</label>
+                                                <div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="turno" id="turno-manana" value="manana" required>
+                                                        <label class="form-check-label" for="turno-manana">Mañana</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="turno" id="turno-tarde" value="tarde">
+                                                        <label class="form-check-label" for="turno-tarde">Tarde</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="turno" id="turno-noche" value="noche">
+                                                        <label class="form-check-label" for="turno-noche">Noche</label>
+                                                    </div>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Por favor selecciona un turno de preferencia.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <!-- Información Adicional -->
+                                    <fieldset class="mb-4">
+                                        <legend class="fw-bold text-primary h5 mb-3">
+                                            <i class="bi bi-info-circle me-2"></i>Información Adicional
+                                        </legend>
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <label for="comoSeEntero" class="form-label fw-semibold">¿Cómo se enteró de nosotros?</label>
+                                                <select class="form-select" id="comoSeEntero">
+                                                    <option value="" selected disabled>Selecciona una opción</option>
+                                                    <option value="redes-sociales">Redes Sociales</option>
+                                                    <option value="amigo-familiar">Amigo o Familiar</option>
+                                                    <option value="web">Página Web</option>
+                                                    <option value="feria">Feria Educativa</option>
+                                                    <option value="periodico">Periódico/Revista</option>
+                                                    <option value="radio-tv">Radio/Televisión</option>
+                                                    <option value="otro">Otro</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="comentarios" class="form-label fw-semibold">Comentarios Adicionales</label>
+                                                <textarea class="form-control" id="comentarios" rows="3" placeholder="¿Alguna pregunta o comentario adicional?"></textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="terminos" required>
+                                                    <label class="form-check-label" for="terminos">
+                                                        Acepto los <a href="#" class="text-primary">términos y condiciones</a> y la <a href="#" class="text-primary">política de privacidad</a> *
+                                                    </label>
+                                                    <div class="invalid-feedback">
+                                                        Debes aceptar los términos y condiciones.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button type="reset" class="btn btn-outline-secondary me-md-2">Limpiar Formulario</button>
+                                        <button type="submit" class="btn btn-primary px-4">Enviar Solicitud</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Contacto Rápido -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-8 mx-auto">
+                        <h3 class="fw-bold text-primary mb-3">¿Necesitas Ayuda con tu Admisión?</h3>
+                        <p class="lead mb-4">Nuestro equipo de admisiones está listo para asistirte</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-telephone-fill text-primary me-2 fs-5"></i>
+                                <div>
+                                    <small class="text-muted d-block">Llámanos</small>
+                                    <strong>(01) 123-4567</strong>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-whatsapp text-primary me-2 fs-5"></i>
+                                <div>
+                                    <small class="text-muted d-block">WhatsApp</small>
+                                    <strong>+51 987 654 321</strong>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-envelope-fill text-primary me-2 fs-5"></i>
+                                <div>
+                                    <small class="text-muted d-block">Email</small>
+                                    <strong>admision@sise.edu.pe</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Confirmación -->
+    <div class="modal fade" id="modalConfirmacion" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold">¡Solicitud Enviada!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="bi bi-check-circle-fill text-success display-4 mb-3"></i>
+                    <h5 class="fw-bold text-primary">Gracias por tu interés en SISE</h5>
+                    <p>Hemos recibido tu solicitud de admisión. Nuestro equipo se pondrá en contacto contigo dentro de las próximas 24 horas para continuar con el proceso.</p>
+                    <div class="alert alert-info">
+                        <small>
+                            <i class="bi bi-info-circle me-2"></i>
+                            <strong>Próximos pasos:</strong> Revisa tu email para confirmar tu solicitud y recibir información sobre la evaluación diagnóstica.
+                        </small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Información de Contacto -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Contacto</h5>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i> Av. Arequipa 1234, Lima, Perú</p>
+                    <p><i class="bi bi-telephone-fill me-2"></i> (01) 123-4567</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i> info@sise.edu.pe</p>
+                    <p><i class="bi bi-clock-fill me-2"></i> Lun-Vie: 8:00 AM - 8:00 PM</p>
+                </div>
+                
+                <!-- Redes Sociales -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Síguenos en</h5>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="https://www.facebook.com/" target="_blank" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="text-white fs-4"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                    </div>
+                    <div class="bg-secondary p-3 rounded">
+                        <p class="mb-1"><strong>Flor del Campo, Alan Brito</strong></p>
+                        <p class="mb-0">Curso: Diseño y Desarrollo Web con Bootstrap</p>
+                    </div>
+                </div>
+                
+                <!-- Enlaces Rápidos -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="admision.html" class="text-white text-decoration-none">Proceso de Admisión</a></li>
+                        <li><a href="programas.html" class="text-white text-decoration-none">Nuestros Programas</a></li>
+                        <li><a href="servicios.html" class="text-white text-decoration-none">Servicios Estudiantiles</a></li>
+                        <li><a href="contacto.html" class="text-white text-decoration-none">Trabaja con Nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <!-- Copyright -->
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">Todos los Derechos Reservados - Copyright © 2025 Instituto Superior SISE</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Política de Privacidad</a>
+                    <a href="#" class="text-white text-decoration-none">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

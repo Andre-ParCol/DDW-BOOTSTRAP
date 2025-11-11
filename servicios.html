@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Estudiantiles - Instituto Superior SISE</title>
+
+    <!-- En lugar de CDN = Content Delivery Network (Red de distribución de contenidos), se está utilizando el Bootstrap descargado. -->
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Es mejor colocar los scripts en el <head> con defer, porque permite descargar el JavaScript en paralelo al análisis del HTML y ejecutarlo una vez que todo el DOM esté listo, sin bloquear el renderizado. -->
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Bootstrap JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script> -->
+
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/banner-servicios.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+        }
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .service-card {
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+        /* Override de color primario Bootstrap */
+        .bg-primary {
+            background-color: #dc3545 !important;
+        }
+        .btn-primary {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-primary:hover {
+            background-color: #bb2d3b;
+            border-color: #b02a37;
+        }
+        .btn-outline-primary {
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-outline-primary:hover {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .text-primary {
+            color: #dc3545 !important;
+        }
+        .table-primary {
+            background-color: rgba(220, 53, 69, 0.1) !important;
+        }
+        .border-primary {
+            border-color: #dc3545 !important;
+        }
+        /* Clase personalizada SOLO para el navbar */
+        .bg-custom-navbar {
+            background-color: #6c757d !important; /* Gris Bootstrap */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom-navbar sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="img/logo-sise.png" alt="Logo SISE" height="40" class="d-inline-block align-text-top me-2">
+                Instituto SISE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programas.html">Programas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admision.html">Admisión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Servicios Estudiantiles</h1>
+                    <p class="lead mb-4">Apoyo integral para tu éxito académico y profesional</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Sección: Servicios Principales -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">Nuestros Servicios</h2>
+                        <p class="lead">Conoce todos los beneficios que tenemos para ti</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <!-- Servicio 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card service-card border-0 shadow rounded-3">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-briefcase-fill text-primary service-icon"></i>
+                                <h5 class="card-title fw-bold">Bolsa de Trabajo</h5>
+                                <p class="card-text">Convenios con más de 200 empresas para prácticas preprofesionales y empleo.</p>
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="bi bi-check text-primary me-2"></i>Ferias de empleo semestrales</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Asesoría para CV y entrevistas</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Portal exclusivo de empleos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card service-card border-0 shadow rounded-3">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-book-fill text-primary service-icon"></i>
+                                <h5 class="card-title fw-bold">Biblioteca Virtual</h5>
+                                <p class="card-text">Acceso 24/7 a más de 10,000 recursos digitales y bases de datos especializadas.</p>
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="bi bi-check text-primary me-2"></i>Libros electrónicos actualizados</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Revistas científicas internacionales</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Tutorías virtuales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card service-card border-0 shadow rounded-3">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-heart-pulse-fill text-primary service-icon"></i>
+                                <h5 class="card-title fw-bold">Bienestar Estudiantil</h5>
+                                <p class="card-text">Atención integral en salud física y mental para nuestro estudiantes.</p>
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="bi bi-check text-primary me-2"></i>Consultorio médico gratuito</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Orientación psicológica</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Seguro contra accidentes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 4 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card service-card border-0 shadow rounded-3">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-laptop-fill text-primary service-icon"></i>
+                                <h5 class="card-title fw-bold">Laboratorios Especializados</h5>
+                                <p class="card-text">Infraestructura tecnológica de última generación para prácticas.</p>
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="bi bi-check text-primary me-2"></i>Laboratorio de computación</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Simuladores profesionales</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Software licenciado</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 5 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card service-card border-0 shadow rounded-3">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-graph-up-arrow text-primary service-icon"></i>
+                                <h5 class="card-title fw-bold">Tutorías Académicas</h5>
+                                <p class="card-text">Soporte personalizado para reforzar tus conocimientos y habilidades.</p>
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="bi bi-check text-primary me-2"></i>Tutorías individuales y grupales</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Nivelación académica</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Preparación para exámenes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 6 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card service-card border-0 shadow rounded-3">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-globe-americas text-primary service-icon"></i>
+                                <h5 class="card-title fw-bold">Intercambios Internacionales</h5>
+                                <p class="card-text">Programas de movilidad estudiantil con instituciones del extranjero.</p>
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="bi bi-check text-primary me-2"></i>Convenios internacionales</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Becas de intercambio</li>
+                                    <li><i class="bi bi-check text-primary me-2"></i>Cursos de idiomas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Horarios de Servicios (Tabs) -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">Horarios de Atención</h2>
+                        <p class="lead">Conoce los horarios disponibles para cada servicio</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card shadow rounded-3">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" id="horariosTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="biblioteca-tab" data-bs-toggle="tab" data-bs-target="#biblioteca" type="button">
+                                            <i class="bi bi-book me-2"></i>Biblioteca
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="bolsa-tab" data-bs-toggle="tab" data-bs-target="#bolsa" type="button">
+                                            <i class="bi bi-briefcase me-2"></i>Bolsa de Trabajo
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="bienestar-tab" data-bs-toggle="tab" data-bs-target="#bienestar" type="button">
+                                            <i class="bi bi-heart me-2"></i>Bienestar
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="tutorias-tab" data-bs-toggle="tab" data-bs-target="#tutorias" type="button">
+                                            <i class="bi bi-graph-up me-2"></i>Tutorías
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content p-4" id="horariosTabContent">
+                                    <!-- Biblioteca -->
+                                    <div class="tab-pane fade show active" id="biblioteca" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5 class="fw-bold text-primary">Biblioteca Física</h5>
+                                                <ul class="list-unstyled">
+                                                    <li><strong>Lunes a Viernes:</strong> 7:00 AM - 9:00 PM</li>
+                                                    <li><strong>Sábados:</strong> 8:00 AM - 2:00 PM</li>
+                                                    <li><strong>Domingos:</strong> Cerrado</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5 class="fw-bold text-primary">Biblioteca Virtual</h5>
+                                                <ul class="list-unstyled">
+                                                    <li><strong>Acceso:</strong> 24/7</li>
+                                                    <li><strong>Soporte técnico:</strong> Lun-Vie 8:00 AM - 6:00 PM</li>
+                                                    <li><strong>Recursos:</strong> +10,000 documentos</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Bolsa de Trabajo -->
+                                    <div class="tab-pane fade" id="bolsa" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5 class="fw-bold text-primary">Atención Presencial</h5>
+                                                <ul class="list-unstyled">
+                                                    <li><strong>Lunes a Viernes:</strong> 8:00 AM - 5:00 PM</li>
+                                                    <li><strong>Asesoría CV:</strong> Con cita previa</li>
+                                                    <li><strong>Entrevistas:</strong> Lun-Vie 9:00 AM - 4:00 PM</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5 class="fw-bold text-primary">Portal en Línea</h5>
+                                                <ul class="list-unstyled">
+                                                    <li><strong>Acceso:</strong> 24/7</li>
+                                                    <li><strong>Postulaciones:</strong> En cualquier momento</li>
+                                                    <li><strong>Notificaciones:</strong> Vía email y app</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Bienestar -->
+                                    <div class="tab-pane fade" id="bienestar" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5 class="fw-bold text-primary">Consultorio Médico</h5>
+                                                <ul class="list-unstyled">
+                                                    <li><strong>Lunes a Viernes:</strong> 8:00 AM - 4:00 PM</li>
+                                                    <li><strong>Emergencias:</strong> Durante horario de clases</li>
+                                                    <li><strong>Medicina:</strong> Dra. Elena Mendoza</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5 class="fw-bold text-primary">Orientación Psicológica</h5>
+                                                <ul class="list-unstyled">
+                                                    <li><strong>Lunes a Viernes:</strong> 9:00 AM - 5:00 PM</li>
+                                                    <li><strong>Citas:</strong> Con previa coordinación</li>
+                                                    <li><strong>Psicóloga:</strong> Lic. Patricia López</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Tutorías -->
+                                    <div class="tab-pane fade" id="tutorias" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5 class="fw-bold text-primary">Tutorías Presenciales</h5>
+                                                <ul class="list-unstyled">
+                                                    <li><strong>Lunes a Viernes:</strong> 2:00 PM - 8:00 PM</li>
+                                                    <li><strong>Sábados:</strong> 9:00 AM - 1:00 PM</li>
+                                                    <li><strong>Duración:</strong> Sesiones de 1 hora</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5 class="fw-bold text-primary">Tutorías Virtuales</h5>
+                                                <ul class="list-unstyled">
+                                                    <li><strong>Lunes a Domingo:</strong> 6:00 PM - 10:00 PM</li>
+                                                    <li><strong>Plataforma:</strong> Zoom/Meet</li>
+                                                    <li><strong>Reserva:</strong> Mínimo 24h anticipación</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Testimonios -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">Lo que Dicen Nuestros Estudiantes</h2>
+                        <p class="lead">Experiencias reales con nuestros servicios</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow rounded-3 h-100">
+                            <div class="card-body text-center p-4">
+                                <img src="img/testimonio-1.jpg" alt="María González" class="testimonial-img rounded-circle mb-3">
+                                <h5 class="card-title fw-bold">María González</h5>
+                                <p class="text-primary">Enfermería Técnica</p>
+                                <p class="card-text">"La bolsa de trabajo me ayudó a conseguir mi primer empleo incluso antes de graduarme. El apoyo en la preparación de CV y entrevistas fue invaluable."</p>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow rounded-3 h-100">
+                            <div class="card-body text-center p-4">
+                                <img src="img/testimonio-2.jpg" alt="Carlos Rodríguez" class="testimonial-img rounded-circle mb-3">
+                                <h5 class="card-title fw-bold">Carlos Rodríguez</h5>
+                                <p class="text-primary">Diseño y Desarrollo Web</p>
+                                <p class="card-text">"Las tutorías académicas me salvaron en cálculo y programación. Los tutores son muy dedicados y explican de manera clara y paciente."</p>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow rounded-3 h-100">
+                            <div class="card-body text-center p-4">
+                                <img src="img/testimonio-3.jpg" alt="Ana Torres" class="testimonial-img rounded-circle mb-3">
+                                <h5 class="card-title fw-bold">Ana Torres</h5>
+                                <p class="text-primary">Administración de Empresas</p>
+                                <p class="card-text">"El programa de intercambio me permitió estudiar un semestre en España. Fue una experiencia que transformó mi vida personal y profesional."</p>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: CTA -->
+        <section class="py-5 bg-primary text-white">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="fw-bold mb-4">¿Listo para Experimentar Nuestros Servicios?</h2>
+                        <p class="lead mb-4">Únete a nuestra comunidad educativa y accede a todos estos beneficios</p>
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="admision.html" class="btn btn-light btn-lg px-4">Iniciar Admisión</a>
+                            <a href="contacto.html" class="btn btn-outline-light btn-lg px-4">Solicitar Información</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Información de Contacto -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Contacto</h5>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i> Av. Arequipa 1234, Lima, Perú</p>
+                    <p><i class="bi bi-telephone-fill me-2"></i> (01) 123-4567</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i> info@sise.edu.pe</p>
+                    <p><i class="bi bi-clock-fill me-2"></i> Lun-Vie: 8:00 AM - 8:00 PM</p>
+                </div>
+                
+                <!-- Redes Sociales -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Síguenos en</h5>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="https://www.facebook.com/" target="_blank" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="text-white fs-4"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                    </div>
+                    <div class="bg-secondary p-3 rounded">
+                        <p class="mb-1"><strong>Flor del Campo, Alan Brito</strong></p>
+                        <p class="mb-0">Curso: Diseño y Desarrollo Web con Bootstrap</p>
+                    </div>
+                </div>
+                
+                <!-- Enlaces Rápidos -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="admision.html" class="text-white text-decoration-none">Proceso de Admisión</a></li>
+                        <li><a href="programas.html" class="text-white text-decoration-none">Nuestros Programas</a></li>
+                        <li><a href="servicios.html" class="text-white text-decoration-none">Servicios Estudiantiles</a></li>
+                        <li><a href="contacto.html" class="text-white text-decoration-none">Trabaja con Nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <!-- Copyright -->
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">Todos los Derechos Reservados - Copyright © 2025 Instituto Superior SISE</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Política de Privacidad</a>
+                    <a href="#" class="text-white text-decoration-none">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
